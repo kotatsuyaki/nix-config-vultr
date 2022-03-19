@@ -1,4 +1,5 @@
-{ pkgs, ... }: { programs.neovim = {
+{ pkgs, ... }: {
+  programs.neovim = {
     enable = true;
     vimAlias = true;
     configure.customRC = ''
@@ -13,11 +14,11 @@
     '';
     configure.packages.mypkg = with pkgs.vimPlugins; {
       start = [
-	vim-surround
-	nightfox-nvim
+        vim-surround
+        nightfox-nvim
         (nvim-treesitter.withPlugins (plugins: with plugins; [
-	  tree-sitter-nix
-	]))
+          tree-sitter-nix
+        ]))
       ];
     };
   };

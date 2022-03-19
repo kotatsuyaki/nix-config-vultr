@@ -8,9 +8,9 @@
       modules = [
         ./configuration.nix
         ./neovim.nix
-	./nix-settings.nix
-	./sourcehut.nix
-	./tmux.nix
+        ./nix-settings.nix
+        ./sourcehut.nix
+        ./tmux.nix
       ];
     };
   };

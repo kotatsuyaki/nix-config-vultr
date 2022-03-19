@@ -2,10 +2,11 @@
 { pkgs, ... }:
 let
   fqdn = "kotatsu.tk";
-    # let
-    #   join = hostName: domain: hostName + optionalString (domain != null) ".${domain}";
-    # in join config.networking.hostName config.networking.domain;
-in {
+  # let
+  #   join = hostName: domain: hostName + optionalString (domain != null) ".${domain}";
+  # in join config.networking.hostName config.networking.domain;
+in
+{
   environment.systemPackages = with pkgs; [
     gitMinimal
   ];
@@ -50,7 +51,7 @@ in {
         # oauth-client-secret = pkgs.writeText "mansrht-oauth-client-secret" "3597288dc2c716e567db5384f493b09d";
         oauth-client-id = "962a22e26b5a826e";
       };
-      webhooks.private-key= "/var/lib/keys/srht-webhook-private-key.txt";
+      webhooks.private-key = "/var/lib/keys/srht-webhook-private-key.txt";
     };
   };
 
