@@ -36,19 +36,16 @@ in
         network-key = "/var/lib/keys/srht-network-secret-key.txt";
         service-key = "/var/lib/keys/srht-service-secret-key.txt";
       };
-      # "builds.sr.ht" = {
-      #   oauth-client-secret = "/var/lib/keys/srht-builds-oauth-client-secret.txt";
-      #   # pkgs.writeText "buildsrht-oauth-client-secret" "2260e9c4d9b8dcedcef642860e0504bc";
-      #   oauth-client-id = "c324ae43fbfcb170";
-      # };
+      /* "builds.sr.ht" = {
+        oauth-client-secret = "/var/lib/keys/srht-builds-oauth-client-secret.txt";
+        oauth-client-id = "c324ae43fbfcb170";
+        }; */
       "git.sr.ht" = {
         oauth-client-secret = "/var/lib/keys/srht-git-oauth-client-secret.txt";
-        # oauth-client-secret = pkgs.writeText "gitsrht-oauth-client-secret" "3597288dc2c716e567db5384f493b09d";
         oauth-client-id = "9802473292668d6e";
       };
       "man.sr.ht" = {
         oauth-client-secret = "/var/lib/keys/srht-man-oauth-client-secret.txt";
-        # oauth-client-secret = pkgs.writeText "mansrht-oauth-client-secret" "3597288dc2c716e567db5384f493b09d";
         oauth-client-id = "962a22e26b5a826e";
       };
       webhooks.private-key = "/var/lib/keys/srht-webhook-private-key.txt";
