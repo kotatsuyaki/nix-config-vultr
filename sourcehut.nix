@@ -14,7 +14,7 @@ in
     enable = true;
 
     git.enable = true;
-    # man.enable = true;
+    builds.enable = true;
     meta.enable = true;
 
     nginx.enable = true;
@@ -24,7 +24,7 @@ in
     services = [
       "git"
       "meta"
-      # "man"
+      "builds"
     ];
 
     settings = {
@@ -36,10 +36,10 @@ in
         network-key = "/var/lib/keys/srht-network-secret-key.txt";
         service-key = "/var/lib/keys/srht-service-secret-key.txt";
       };
-      /* "builds.sr.ht" = {
+      "builds.sr.ht" = {
         oauth-client-secret = "/var/lib/keys/srht-builds-oauth-client-secret.txt";
         oauth-client-id = "c324ae43fbfcb170";
-        }; */
+      };
       "git.sr.ht" = {
         oauth-client-secret = "/var/lib/keys/srht-git-oauth-client-secret.txt";
         oauth-client-id = "9802473292668d6e";
@@ -56,7 +56,7 @@ in
     "meta.${fqdn}"
     "man.${fqdn}"
     "git.${fqdn}"
-    # "builds.${fqdn}"
+    "builds.${fqdn}"
   ];
 
   services.nginx = {
@@ -70,7 +70,7 @@ in
     # Settings to setup what certificates are used for which endpoint.
     virtualHosts = {
       "${fqdn}".enableACME = true;
-      # "builds.${fqdn}".useACMEHost = fqdn;
+      "builds.${fqdn}".useACMEHost = fqdn;
       "meta.${fqdn}".useACMEHost = fqdn;
       "man.${fqdn}".useACMEHost = fqdn;
       "git.${fqdn}".useACMEHost = fqdn;
