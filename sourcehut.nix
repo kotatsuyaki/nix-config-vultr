@@ -55,7 +55,6 @@ let
 
           environment.systemPackages = [
             pkgs.gitMinimal
-            #pkgs.mercurial
             pkgs.curl
             pkgs.gnupg
           ];
@@ -112,6 +111,7 @@ in
   environment.systemPackages = with pkgs; [
     gitMinimal
   ];
+  services.redis.servers."sourcehut-buildsrht".port = 6379;
   services.sourcehut = {
     enable = true;
 
@@ -119,8 +119,7 @@ in
     meta.enable = true;
     builds = {
       enable = true;
-      enableWorker = true;
-      inherit images;
+      enableWorker = false;
     };
 
     nginx.enable = true;
@@ -145,6 +144,9 @@ in
       "builds.sr.ht" = {
         oauth-client-secret = "/var/lib/keys/srht-builds-oauth-client-secret.txt";
         oauth-client-id = "c324ae43fbfcb170";
+      };
+      "builds.sr.ht::worker" = {
+        name = "localhost:8887";
       };
       "git.sr.ht" = {
         oauth-client-secret = "/var/lib/keys/srht-git-oauth-client-secret.txt";
