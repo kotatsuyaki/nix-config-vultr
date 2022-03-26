@@ -9,7 +9,6 @@
         ./configuration.nix
         ./neovim.nix
         ./nix-settings.nix
-        ./sourcehut.nix
         ./tmux.nix
       ];
     };
