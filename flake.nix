@@ -10,6 +10,7 @@
         ./neovim.nix
         ./nix-settings.nix
         ./tmux.nix
+        ./postgres.nix
       ];
     };
   };
