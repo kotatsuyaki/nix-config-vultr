@@ -21,6 +21,12 @@
   networking.useDHCP = false;
   networking.interfaces.enp1s0.useDHCP = true;
 
+  environment.systemPackages = with pkgs; [
+    btop
+    ripgrep
+    fd
+  ];
+
   time.timeZone = "Asia/Taipei";
   i18n.defaultLocale = "en_US.UTF-8";
 
