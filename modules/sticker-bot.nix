@@ -57,7 +57,10 @@ in
 
   systemd.services.sticker-bot = {
     description = "Telegram sticker search bot instance";
-    after = [ "network.target" ];
+    after = [
+      "network.target"
+      "postgresql.service"
+    ];
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
