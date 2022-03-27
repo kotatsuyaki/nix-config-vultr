@@ -36,11 +36,16 @@
   };
 
   services.openssh.enable = true;
+  services.openssh.gatewayPorts = "yes";
+  services.openssh.listenAddresses = [{
+    addr = "0.0.0.0";
+    port = 22;
+  }];
 
   # Open ports in the firewall.
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ ];
-  networking.firewall.allowedUDPPorts = [ ];
+  networking.firewall.allowedTCPPorts = [ 25565 ];
+  networking.firewall.allowedUDPPorts = [ 25565 ];
 
   system.stateVersion = "21.11"; # Did you read the comment?
 }
