@@ -3,6 +3,6 @@
     package = pkgs.postgresql_13;
     enable = true;
     enableTCPIP = true;
-    unix_socket_perms = "0770";
+    settings.unix_socket_permissions = "0770";
   };
 }
